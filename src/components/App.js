@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/App.css';
 import { Wrapper } from '../context/userContext';
 import { Settings } from './Settings';
 import { Home } from './Home';
 const App = () => {
-
+  const [greeting, SetGreeting] = useState('aksh')
   return (
     <div id="main">
-      <Wrapper>
+      <Wrapper.Provider value = {{greetting : greeting}}>
         <Settings />
         <Home />
-      </Wrapper>
+      </Wrapper.Provider>
     </div>
   )
 }
